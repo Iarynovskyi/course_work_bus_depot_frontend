@@ -30,7 +30,7 @@ export default function App() {
 
     useEffect(() => {
         loadData();
-        const interval = setInterval(loadData, 3000);
+        const interval = setInterval(loadData, 300000);
         return () => clearInterval(interval);
     },[]);
 
