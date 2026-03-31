@@ -1,6 +1,6 @@
 import { BUS } from '../types';
 
-const API_URL = 'http://localhost:8080/api/buses';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8080/api/buses';
 
 export const fetchBuses = async (): Promise<BUS[]> => {
     const response = await fetch(API_URL);
