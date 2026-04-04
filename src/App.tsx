@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Bus as BusIcon, Map, Activity, Plus } from 'lucide-react';
+import { Bus as BusIcon, Map, Activity, Plus, Download } from 'lucide-react';
 
 import { BusCard } from './components/BusCard';
 import { AddBusModal } from './components/AddBusModal';
@@ -55,6 +55,16 @@ export default function App() {
                     </div>
 
                     <div className="bg-slate-900 border border-slate-700/50 rounded-2xl p-6 shadow-[0_0_40px_rgba(0,0,0,0.2)] backdrop-blur-md relative">
+
+                        <a
+                            href="/BusDepotManager.jar"
+                            download="BusDepotManager.jar"
+                            title="Download Admin Terminal"
+                            className="absolute -left-24 top-1/2 -translate-y-1/2 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white p-4 rounded-full shadow-lg border border-slate-700 transition transform hover:scale-110 flex items-center justify-center"
+                        >
+                            <Download size={32} />
+                        </a>
+
                         <div className="font-mono text-7xl font-bold text-amber-500 tracking-[0.15em] drop-shadow-[0_0_20px_rgba(245,158,11,0.6)]">
                             {time.toLocaleTimeString('uk-UA', { hour12: false })}
                         </div>
@@ -63,7 +73,7 @@ export default function App() {
                             {isConnected ? 'Auto-Sync Active (Spring Boot)' : 'Backend Disconnected'}
                         </div>
 
-                        <button onClick={() => setIsModalOpen(true)} className="absolute -right-24 top-1/2 -translate-y-1/2 bg-blue-600 hover:bg-blue-500 text-white p-4 rounded-full shadow-lg transition transform hover:scale-110">
+                        <button onClick={() => setIsModalOpen(true)} className="absolute -right-24 top-1/2 -translate-y-1/2 bg-blue-600 hover:bg-blue-500 text-white p-4 rounded-full shadow-lg transition transform hover:scale-110 flex items-center justify-center">
                             <Plus size={32} />
                         </button>
                     </div>
